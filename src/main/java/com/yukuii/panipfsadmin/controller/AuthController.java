@@ -5,6 +5,7 @@ import com.yukuii.panipfsadmin.common.result.Result;
 import com.yukuii.panipfsadmin.entity.User;
 import com.yukuii.panipfsadmin.model.dto.LoginDTO;
 import com.yukuii.panipfsadmin.model.dto.RegisterDTO;
+import com.yukuii.panipfsadmin.model.vo.LoginResponseVo;
 import com.yukuii.panipfsadmin.service.UserService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +20,9 @@ public class AuthController {
     private UserService userService;
 
     @PostMapping("/login")
-    public Result<User> login(@Validated @RequestBody LoginDTO loginDTO) {
-        User user = userService.login(loginDTO);
-        return Result.success(user);
+    public Result<LoginResponseVo> login(@Validated @RequestBody LoginDTO loginDTO) {
+       LoginResponseVo loginResponseVo = userService.login(loginDTO);
+        return Result.success(loginResponseVo);
     }
 
     @PostMapping("/register")

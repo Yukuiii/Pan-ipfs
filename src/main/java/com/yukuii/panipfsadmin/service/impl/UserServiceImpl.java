@@ -1,15 +1,18 @@
 package com.yukuii.panipfsadmin.service.impl;
 
 import cn.dev33.satoken.secure.BCrypt;
+import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import com.yukuii.panipfsadmin.common.exception.BusinessException;
 import com.yukuii.panipfsadmin.entity.User;
 import com.yukuii.panipfsadmin.mapper.UserMapper;
 import com.yukuii.panipfsadmin.model.dto.LoginDTO;
 import com.yukuii.panipfsadmin.model.dto.RegisterDTO;
+import com.yukuii.panipfsadmin.model.vo.LoginResponseVo;
 import com.yukuii.panipfsadmin.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 
 import jakarta.annotation.Resource;
 
@@ -20,7 +23,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
     
     @Override
-    public User login(LoginDTO loginDTO) {
+    public LoginResponseVo login(LoginDTO loginDTO) {
         User user = userMapper.selectByUsername(loginDTO.getUsername());
         
         if (user == null) {
@@ -33,10 +36,13 @@ public class UserServiceImpl implements UserService {
         
         // 登录成功，记录登录状态
         StpUtil.login(user.getId());
-        
+        SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
         // 清除密码
         user.setPassword(null);
-        return user;
+        LoginResponseVo loginResponseVo = new LoginResponseVo();
+        loginResponseVo.setUser(user);
+        loginResponseVo.setToken(tokenInfo.getTokenValue());
+        return loginResponseVo;
     }
     
     @Override
