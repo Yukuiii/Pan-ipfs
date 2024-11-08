@@ -37,8 +37,9 @@ public class AuthController {
     }
 
     @GetMapping("/info")
-    public Result<?> getUserInfo() {
-        // TODO: 获取当前登录用户信息
-        return Result.success();
+    public Result<User> getUserInfo() {
+        Long userId = StpUtil.getLoginIdAsLong();
+        User user = userService.getUserInfo(userId);
+        return Result.success(user);
     }
 } 
