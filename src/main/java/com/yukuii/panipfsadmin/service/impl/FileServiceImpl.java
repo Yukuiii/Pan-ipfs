@@ -1,8 +1,8 @@
 package com.yukuii.panipfsadmin.service.impl;
 
 import com.alibaba.fastjson2.JSON;
+import com.yukuii.panipfsadmin.common.config.IpfsConfig;
 import com.yukuii.panipfsadmin.common.exception.BusinessException;
-import com.yukuii.panipfsadmin.config.IpfsConfig;
 import com.yukuii.panipfsadmin.model.dto.FileUploadDTO;
 import com.yukuii.panipfsadmin.model.vo.FileUploadVO;
 import com.yukuii.panipfsadmin.service.FileService;

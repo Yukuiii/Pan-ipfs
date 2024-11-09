@@ -1,4 +1,4 @@
-package com.yukuii.panipfsadmin.config;
+package com.yukuii.panipfsadmin.common.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

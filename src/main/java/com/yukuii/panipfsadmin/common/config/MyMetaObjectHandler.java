@@ -1,4 +1,4 @@
-package com.yukuii.panipfsadmin.config;
+package com.yukuii.panipfsadmin.common.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;

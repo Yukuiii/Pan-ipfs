@@ -1,4 +1,4 @@
-package com.yukuii.panipfsadmin.config;
+package com.yukuii.panipfsadmin.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
