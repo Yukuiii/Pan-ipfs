@@ -58,7 +58,7 @@ public class FileServiceImpl implements FileService {
                 fileUploadVO.setFileHash(fileUploadDTO.getHash());
                 fileUploadVO.setFileName(fileUploadDTO.getName());
                 fileUploadVO.setFileSize(fileUploadDTO.getSize());
-                fileUploadVO.setFileUrl(fileUploadDTO.getUrl());/
+                fileUploadVO.setFileUrl(fileUploadDTO.getUrl());
                 return fileUploadVO;
             } else {
                 throw new BusinessException("文件上传失败");
