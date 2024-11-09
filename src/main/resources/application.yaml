@@ -57,5 +57,4 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 ipfs:
-  gateway: https://ipfs.io
   apiUrl: https://api.img2ipfs.org
