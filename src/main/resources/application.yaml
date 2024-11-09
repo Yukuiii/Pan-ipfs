@@ -12,8 +12,21 @@ spring:
       min-idle: 5
       max-active: 20
       max-wait: 60000
+  servlet:
+    multipart:
+      max-file-size: 100MB      # 单个文件大小限制
+      max-request-size: 100MB  # 总请求大小限制 
+  output:
+    ansi:
+      enabled: always
+
 server:
   port: 8080
+  servlet:
+    encoding:
+      enabled: true
+      force: true
+      charset: UTF-8
 
 
 sa-token:
@@ -42,3 +55,7 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+ipfs:
+  gateway: https://ipfs.io
+  apiUrl: https://api.img2ipfs.org
