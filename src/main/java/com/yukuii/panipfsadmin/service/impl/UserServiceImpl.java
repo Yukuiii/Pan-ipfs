@@ -1,19 +1,19 @@
 package com.yukuii.panipfsadmin.service.impl;
 
-import cn.dev33.satoken.secure.BCrypt;
-import cn.dev33.satoken.stp.SaTokenInfo;
-import cn.dev33.satoken.stp.StpUtil;
-import com.yukuii.panipfsadmin.common.exception.BusinessException;
-import com.yukuii.panipfsadmin.model.entity.User;
-import com.yukuii.panipfsadmin.mapper.UserMapper;
-import com.yukuii.panipfsadmin.model.dto.LoginDTO;
-import com.yukuii.panipfsadmin.model.dto.RegisterDTO;
-import com.yukuii.panipfsadmin.model.vo.LoginResponseVo;
-import com.yukuii.panipfsadmin.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.yukuii.panipfsadmin.common.exception.BusinessException;
+import com.yukuii.panipfsadmin.mapper.UserMapper;
+import com.yukuii.panipfsadmin.model.dto.LoginDTO;
+import com.yukuii.panipfsadmin.model.dto.RegisterDTO;
+import com.yukuii.panipfsadmin.model.entity.User;
+import com.yukuii.panipfsadmin.model.vo.LoginResponseVo;
+import com.yukuii.panipfsadmin.service.UserService;
 
+import cn.dev33.satoken.secure.BCrypt;
+import cn.dev33.satoken.stp.SaTokenInfo;
+import cn.dev33.satoken.stp.StpUtil;
 import jakarta.annotation.Resource;
 
 @Service
@@ -69,5 +69,15 @@ public class UserServiceImpl implements UserService {
             user.setPassword(null);
         }
         return user;
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        return userMapper.selectByUsername(username);
+    }
+
+    @Override
+    public void addUser(User user) {
+        userMapper.insert(user);
     }
 }

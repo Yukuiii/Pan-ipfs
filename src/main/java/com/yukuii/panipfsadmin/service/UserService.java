@@ -8,4 +8,6 @@ public interface UserService {
     LoginResponseVo login(LoginDTO loginDTO);
     void register(RegisterDTO registerDTO);
     User getUserInfo(Long userId);
+    User getUserByUsername(String username);
+    void addUser(User user);
 } 

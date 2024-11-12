@@ -1,19 +1,23 @@
 package com.yukuii.panipfsadmin.controller;
 
-
 import java.util.List;
+
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.yukuii.panipfsadmin.common.result.Result;
 import com.yukuii.panipfsadmin.model.entity.User;
-import com.yukuii.panipfsadmin.model.vo.StatisticsVO;
 import com.yukuii.panipfsadmin.model.vo.FileVO;
+import cn.dev33.satoken.secure.BCrypt;
+import com.yukuii.panipfsadmin.model.vo.StatisticsVO;
 import com.yukuii.panipfsadmin.service.AdminService;
+import com.yukuii.panipfsadmin.service.UserService;
 
 import cn.dev33.satoken.annotation.SaCheckRole;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +29,8 @@ import lombok.RequiredArgsConstructor;
 public class AdminController {
 
     private final AdminService adminService;
+    private final UserService userService;
+
 
     @GetMapping("/statistics")
     public Result<StatisticsVO> getStatistics() {
