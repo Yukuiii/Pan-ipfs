@@ -52,4 +52,16 @@ public class AdminController {
         adminService.deleteFile(fileId);
         return Result.success();
     }
+
+    @PostMapping("/users")
+    public Result<?> addUser(@RequestBody User user) {
+        // 添加用户前先检查用户名是否已存在
+        if (userService.getUserByUsername(user.getUsername()) != null) {
+            return Result.error("用户名已存在");
+        }
+        // 对密码进行加密
+        user.setPassword(BCrypt.hashpw(user.getPassword()));
+        userService.addUser(user);
+        return Result.success();
+    }
 } 
