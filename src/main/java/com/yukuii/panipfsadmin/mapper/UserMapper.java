@@ -1,7 +1,7 @@
 package com.yukuii.panipfsadmin.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.yukuii.panipfsadmin.entity.User;
+import com.yukuii.panipfsadmin.model.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

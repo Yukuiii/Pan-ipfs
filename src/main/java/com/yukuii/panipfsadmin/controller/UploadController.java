@@ -3,7 +3,7 @@ package com.yukuii.panipfsadmin.controller;
 import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.dev33.satoken.stp.StpUtil;
 import com.yukuii.panipfsadmin.common.result.Result;
-import com.yukuii.panipfsadmin.entity.File;
+import com.yukuii.panipfsadmin.model.entity.File;
 import com.yukuii.panipfsadmin.model.vo.FileUploadVO;
 import com.yukuii.panipfsadmin.service.FileService;
 import org.springframework.web.bind.annotation.*;

@@ -1,6 +1,6 @@
 package com.yukuii.panipfsadmin.service;
 
-import com.yukuii.panipfsadmin.entity.User;
+import com.yukuii.panipfsadmin.model.entity.User;
 import com.yukuii.panipfsadmin.model.dto.LoginDTO;
 import com.yukuii.panipfsadmin.model.dto.RegisterDTO;
 import com.yukuii.panipfsadmin.model.vo.LoginResponseVo;

@@ -2,7 +2,7 @@ package com.yukuii.panipfsadmin.controller;
 
 import cn.dev33.satoken.stp.StpUtil;
 import com.yukuii.panipfsadmin.common.result.Result;
-import com.yukuii.panipfsadmin.entity.User;
+import com.yukuii.panipfsadmin.model.entity.User;
 import com.yukuii.panipfsadmin.model.dto.LoginDTO;
 import com.yukuii.panipfsadmin.model.dto.RegisterDTO;
 import com.yukuii.panipfsadmin.model.vo.LoginResponseVo;

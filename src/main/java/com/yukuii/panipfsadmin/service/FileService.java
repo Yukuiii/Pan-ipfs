@@ -1,6 +1,6 @@
 package com.yukuii.panipfsadmin.service;
 
-import com.yukuii.panipfsadmin.entity.File;
+import com.yukuii.panipfsadmin.model.entity.File;
 import com.yukuii.panipfsadmin.model.vo.FileUploadVO;
 import org.springframework.web.multipart.MultipartFile;
 

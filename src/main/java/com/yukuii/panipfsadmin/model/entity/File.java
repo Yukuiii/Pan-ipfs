@@ -1,4 +1,4 @@
-package com.yukuii.panipfsadmin.entity;
+package com.yukuii.panipfsadmin.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;

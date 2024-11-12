@@ -4,7 +4,7 @@ import cn.dev33.satoken.secure.BCrypt;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import com.yukuii.panipfsadmin.common.exception.BusinessException;
-import com.yukuii.panipfsadmin.entity.User;
+import com.yukuii.panipfsadmin.model.entity.User;
 import com.yukuii.panipfsadmin.mapper.UserMapper;
 import com.yukuii.panipfsadmin.model.dto.LoginDTO;
 import com.yukuii.panipfsadmin.model.dto.RegisterDTO;
